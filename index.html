@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo novo Mario</title>
+    <title>Super Jogo Do Mario - SESI|SENAI</title>
+    <link rel="stylesheet" href="css/style.css" 
 </head>
+
 <body>
-    <div class="">
+    <div class="game-board">
+        <div class="tela-Inicial">
+            <img src="imagens/logoSenai.png" alt="Logo do SENAI" width="350px">
+            <h1>Super Jogo do Mario</h1>
+            <button id="start-button">Iniciar Jogo</button>
+
+            <div id="escolha-Personagem">
+                <div id="marioDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('mario')">
+                    <img src="media/mario.gif" alt="" class="personagemEscolha">
+                    <p>Mario</p>
+                </div>
+                <div id="gokuDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('goku')">
+                    <img src="media/goku.gif" alt="" class="personagemEscolha">
+                    <p>Goku</p>
+                </div>
+                <div id="megamanDiv" class="divPersonagem" value="mario" onclick="escolhaPersonagem('megaman')">
+                    <img src="media/yd6sCid.gif" alt="" class="personagemEscolha">
+                    <p>Megaman</p>
+                </div>
+                <div id="sonic" class="divPersonagem" value="mario" onclick="escolhaPersonagem('sonic')">
+                    <img src="media/sonic.gif" alt="" class="personagemEscolha">
+                    <p>Sonic</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tela-jogar-denovo">
+            <h1>Você deseja jogar outra vez?</h1>
+            <div id="Continuar-Reiniciar">
+                <button class="Continuar" style="background-color: #44af69; box-shadow: 0 4px #2a6f43;"
+                    onclick="continuarReiniciar('continuar')">Continuar</button>
+                <button class="Reiniciar" style="background-color: red; box-shadow: 0 4px #8a3030;"
+                    onclick="continuarReiniciar('Reiniciar')">Reiniciar</button>
+            </div>
+        </div>
+        <div id="inferno-background"></div>
+        <img src="imagens/pipe.png" class="pipe">
+        <img src="imagens/bullet.png" width="100px" class="bullet">
+        <img src="media/mario.gif" class="mario">
+        <img src="imagens/clouds.png" class="clouds">
+        <div id="star-layer"></div>
+        <div class="score-container">
+            <div class="score">Score: 0</div>
+            <div id="lives-container"></div>
+        </div>
+
+        <div class="game-over-screen" style="display: none;">
+            <h2>Game Over</h2>
+            <p>Sua pontuação foi: <span id="final-score">0</span></p>
+            <button id="restart-button" onclick="window.location.reload()">Jogar Novamente</button>
+        </div>
 
     </div>
 </body>
+<script src="js/script.js" defer></script>
+
 </html>
